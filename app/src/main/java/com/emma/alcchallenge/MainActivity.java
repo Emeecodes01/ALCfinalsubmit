@@ -168,8 +168,9 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),"something went wrong",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"something went wrong...\n Check your network connection",Toast.LENGTH_LONG).show();
                 slc.stopRequestQueue();
+                progressDialog.dismiss();
             }
         });
 
