@@ -89,6 +89,18 @@ public class Profile extends AppCompatActivity {
         //sets the image
         ImageLoader.getInstance().displayImage(githublink + ".png", imv);
         tv.setText(user);//sets the text
+
+        final TextView GithubUrl = (TextView)findViewById(R.id.githuburl);
+        GithubUrl.setText(githublink);
+
+        //sets on clicklistener for the link
+        GithubUrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(githublink));
+                startActivity(browserIntent);
+            }
+        });
     }
 
 }

@@ -27,7 +27,7 @@ public class singletonClass {
     }
 
     public RequestQueue getRequestQueue() {
-        cache = new DiskBasedCache(mcontext.getCacheDir(), 1024 * 1024);
+        cache = new DiskBasedCache(mcontext.getCacheDir(), 1024 * 1024);//sets up cache with 1mb memory size
         network = new BasicNetwork(new HurlStack());
 
         if (requestQueue == null){

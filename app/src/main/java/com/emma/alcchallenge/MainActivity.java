@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     private SwipeRefreshLayout myswipe;
     String mUrl = "https://api.github.com/search/users?q=language:Java+location:Lagos";
+    private  singletonClass slc;
 
 
     public MainActivity() {
@@ -58,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.refresh) {
-            geturl();
+            progressDialog.show();
+            getconnection();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -70,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.listview);//cast the list view from the the XML
 
-        geturl();
+        getconnection();
 
         //creates the progress dialog
         progressDialog = new ProgressDialog(this);
@@ -85,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
         myswipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                geturl();
+                progressDialog.show();
+                getconnection();
             }
         });
 
@@ -122,13 +126,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void geturl(){
+    public void getconnection(){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, mUrl,
                 new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {
                         progressDialog.dismiss();
+                        myswipe.setRefreshing(false);
+
                         ArrayList<myModel> myModelArrayList = new ArrayList<>();
 
                         try {
@@ -153,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
+                        slc.stopRequestQueue();
                         CustomAdapter adapter = new CustomAdapter(getApplicationContext(),R.layout.view_layout,myModelArrayList);
                         lv.setAdapter(adapter);
 
@@ -162,11 +169,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(),"something went wrong",Toast.LENGTH_LONG).show();
-
+                slc.stopRequestQueue();
             }
         });
 
-        singletonClass slc = new singletonClass(getApplicationContext());
+       slc = new singletonClass(getApplicationContext());
         slc.getRequestQueue();
         slc.addToRequestQueue(stringRequest);
 

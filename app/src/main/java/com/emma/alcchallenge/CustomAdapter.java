@@ -53,7 +53,7 @@ public class CustomAdapter extends ArrayAdapter {
         // Then later, when you want to display image
         ImageLoader.getInstance().displayImage(listitems.get(position).getProfilePix() + ".png", userImage);
 
-        userName.setText(listitems.get(position).getUserName());
+        userName.setText(listitems.get(position).getUserName());//sets the user name
 
         convertView.setTag(listitems.get(position).getProfilePix());
 

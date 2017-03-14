@@ -22,5 +22,21 @@
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Goto profile, click the link below "
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center" />
+    <TextView
+        android:text="url"
+        android:id="@+id/githuburl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="normal|italic"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp" />
 
 </LinearLayout>
