@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/backgroundres"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/ic_account_box_blue_500_24dp"
+            android:id="@+id/user_img"
+            android:layout_width="60dip"
+            android:layout_height="60dip" />
+        <TextView
+            android:id="@+id/user_name"
+            android:textSize="20sp"
+            android:text="user name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/background_dark" />
+
+    </LinearLayout>
+
+</LinearLayout>
