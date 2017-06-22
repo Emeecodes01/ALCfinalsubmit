@@ -10,9 +10,6 @@ import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HurlStack;
 
-/**
- * Created by dell on 13/03/2017.
- */
 
 public class singletonClass {
     private static singletonClass mInstance;

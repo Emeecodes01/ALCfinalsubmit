@@ -1,11 +1,5 @@
 package com.emma.alcchallenge;
 
-import android.content.Intent;
-
-/**
- * Created by dell on 06/03/2017.
- */
-
 public class myModel {
         private String url;
         private String userName;

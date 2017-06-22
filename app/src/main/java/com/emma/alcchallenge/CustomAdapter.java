@@ -12,10 +12,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
-/**
- * Created by dell on 06/03/2017.
- */
-
 public class CustomAdapter extends ArrayAdapter {
     private ArrayList<myModel> listitems;
     private  int resource;

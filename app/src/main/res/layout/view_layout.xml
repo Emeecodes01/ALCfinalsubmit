@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="@drawable/backgroundres"
+        android:background="@drawable/click_events"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="horizontal">
@@ -22,6 +22,7 @@
         <TextView
             android:id="@+id/user_name"
             android:textSize="20sp"
+            android:fontFamily="sans-serif"
             android:text="user name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

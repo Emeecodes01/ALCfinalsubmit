@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Getting Network connection Please wait....");
+        progressDialog.setMessage("Getting Network connection Just Wait....");
         progressDialog.show();
 
 
@@ -177,6 +177,5 @@ public class MainActivity extends AppCompatActivity {
        slc = new singletonClass(getApplicationContext());
         slc.getRequestQueue();
         slc.addToRequestQueue(stringRequest);
-
     }
 }
